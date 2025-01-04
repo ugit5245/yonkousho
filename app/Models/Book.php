@@ -13,4 +13,9 @@ class Book extends Model
     {
         return $this->hasMany(Post::class);
     }
+
+    public function question()
+    {
+        return $this->hasMany(Question::class);
+    }
 }
