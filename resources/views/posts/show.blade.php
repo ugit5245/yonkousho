@@ -2,5 +2,5 @@
 
 @section('title','posts')
 @section('content')
-<p>index記事一覧</p>
+<p>show単独記事</p>
 @endsection

@@ -2,5 +2,5 @@
 
 @section('title','posts')
 @section('content')
-<p>index記事一覧</p>
+<p>edit記事編集</p>
 @endsection

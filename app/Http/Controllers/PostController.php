@@ -38,7 +38,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new post();
+         $post->post_title = $request->input('post_title');
+         $post->book_id = $request->input('book_id');
+         $post->book_page = $request->input('book_page');
+         $post->save();
+ 
+         return to_route('posts.index');
     }
 
     /**
@@ -49,7 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('posts.show', compact('post'));
     }
 
     /**
@@ -60,7 +66,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -72,7 +78,13 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post = new post();
+         $post->post_title = $request->input('post_title');
+         $post->book_id = $request->input('book_id');
+         $post->book_page = $request->input('book_page');
+         $post->save();
+ 
+         return to_route('posts.index');
     }
 
     /**
@@ -83,6 +95,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return to_route('posts.index');
     }
 }
