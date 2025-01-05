@@ -9,7 +9,7 @@ class KnowledgeCard extends Model
 {
     use HasFactory;
 
-    public function questions()
+    public function card_has_questions()
     {
         return $this->belongsToMany(Question::class)->withTimestamps();
     }
