@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class QusetionsHaveCardsController extends Controller
+class QuestionsHaveCardsController extends Controller
 {
     public function store($knowledge_card_id)
     {
