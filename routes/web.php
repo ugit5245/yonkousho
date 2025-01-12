@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuestionController;
-
+use App\Http\Controllers\KnowledgeCardController;
+use App\Http\Controllers\QuestionsHaveCardsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
