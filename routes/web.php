@@ -24,6 +24,6 @@ Route::resource('posts',PostController::class);
 
 Route::resource('questions', QuestionController::class);
 
-Route::post('questions/{{question_id}}', QuestionsHaveCardsController::class, 'store')->name('QwithC.store');
+Route::post('questions/{{question_id}}', [QuestionsHaveCardsController::class, 'store'])->name('QwithC.store');
 
-Route::delete('questions/{{question_id}}', QuestionsHaveCardsController::class, 'destroy')->name('QwithC.destroy');
+Route::delete('questions/{{question_id}}', [QuestionsHaveCardsController::class, 'destroy'])->name('QwithC.destroy');
