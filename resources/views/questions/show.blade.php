@@ -20,7 +20,10 @@
 <tr>
 <td>{{ $knowledge_card->card_title }}</td>
 <td>{{ $knowledge_card->card_content }}</td>
-
+@if(question()->question_has_cards()->where('knowledge_card_id',$knowledge_card->id)->exists())
+attach($knowledge_card_id);
+<a href="{{route('')}}"
+@else
 </tr>
 @endforeach
 </table>
