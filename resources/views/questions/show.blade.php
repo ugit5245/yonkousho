@@ -20,13 +20,15 @@
 <tr>
 <td>{{ $knowledge_card->card_title }}</td>
 <td>{{ $knowledge_card->card_content }}</td>
-@if(question()->question_has_cards()->where('knowledge_card_id',$knowledge_card->id)->exists())
+<form method="POST">
+@if($question->question_has_cards()->where('knowledge_card_id', $knowledge_card->id)->exists())
 attach($knowledge_card_id);
 <a href="{{ route('QwithC.destroy', $question->id) }}" onclick="event.preventDefault(); document.getElementById('favorites-destroy-form').submit();">ひもづけ解除</a>
 @else
 <a href="{{ route('QwithC.store', $question->id) }}" onclick="event.preventDefault(); document.getElementById('favorites-destroy-form').submit();">ひもづけ</a>
 </tr>
 @endif
+</form>
 @endforeach
 </table>
 
