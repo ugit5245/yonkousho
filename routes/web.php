@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\CardhasQuestionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\KnowledgeCardController;
-use App\Http\Controllers\QuestionsHaveCardsController;
+use App\Http\Controllers\QuestionHasCardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,14 +17,14 @@ use App\Http\Controllers\QuestionsHaveCardsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->name('question.show');
+
+Route::post('question/{question}/attach', [CardhasQuestionController::class, 'attach'])->name('QwithC.store');
+
+Route::delete('question/{question}/detach', [CardhasQuestionController::class, 'destroy'])->name('QwithC.destroy');
+
 
 Route::resource('posts',PostController::class);
 
 Route::resource('questions', QuestionController::class);
 
-Route::post('questions/{{question_id}}', [QuestionsHaveCardsController::class, 'store'])->name('QwithC.store');
-
-Route::delete('questions/{{question_id}}', [QuestionsHaveCardsController::class, 'destroy'])->name('QwithC.destroy');

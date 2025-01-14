@@ -5,30 +5,42 @@
 <p>show単独設問</p>
 
 <div>
-<table>
-<td>{{$question->question_number}}</td>
-<td>{{$question->question_title}}</td>
-<td>{{$question->question_content}}</td>
-<td>{{$question->recommended_approach}}</td>
-</table>
+  <table>
+    <td>{{$question->question_number}}</td>
+    <td>{{$question->question_title}}</td>
+    <td>{{$question->question_content}}</td>
+    <td>{{$question->recommended_approach}}</td>
+  </table>
 </div>
 
 <p>知識カードリスト</p>
 
-<table>
-@foreach ($knowledge_cards as $knowledge_card)
-<tr>
-<td>{{ $knowledge_card->card_title }}</td>
-<td>{{ $knowledge_card->card_content }}</td>
 <form method="POST">
-@if($question->question_has_cards()->where('knowledge_card_id', $knowledge_card->id)->exists())
-attach($knowledge_card_id);
-<a href="{{ route('QwithC.destroy', $question->id) }}" onclick="event.preventDefault(); document.getElementById('favorites-destroy-form').submit();">ひもづけ解除</a>
-@else
-<a href="{{ route('QwithC.store', $question->id) }}" onclick="event.preventDefault(); document.getElementById('favorites-destroy-form').submit();">ひもづけ</a>
-</tr>
-@endif
+  @csrf
+
+  <table>
+    @foreach ($knowledge_cards as $knowledge_card)
+    <tr>
+      <td>{{ $knowledge_card->id }}</td>
+      <td>{{ $knowledge_card->card_title }}</td>
+      <td>{{ $knowledge_card->card_content }}</td>
+      <td>
+
+        <input type="hidden" name="knowledge_card_id" value="{{$knowledge_card->id}}">
+
+
+
+        @if($knowledge_card->card_has_questions()->where('question_id', $question->id)->exists())
+        <a href="{{ route('QwithC.destroy', $question->id) }}">ひもづけ解除</a>
+        @else
+        <a href="{{ route('QwithC.store', $question) }}" onclick="event.preventDefault(); document.getElementById('favorites-store-form').submit();">ひもづけ</a>
+        @endif
 </form>
+<form id="favorites-store-form" action="{{ route('QwithC.store', $question->id) }}" method="POST">
+  @csrf
+</form>
+</td>
+</tr>
 @endforeach
 </table>
 

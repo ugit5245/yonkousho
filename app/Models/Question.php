@@ -14,7 +14,7 @@ class Question extends Model
         return $this->belongsTo(Book::class);
     }
 
-    public function question_has_cards()
+    public function knowledge_cards()
     {
         return $this->belongsToMany(KnowledgeCard::class)->withTimestamps();
     }
