@@ -21,7 +21,7 @@ Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->n
 
 Route::post('question/{question}/attach', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
 
-Route::delete('question/{question}/detach', [CardhasQuestionController::class, 'destroy'])->name('QwithC.destach');
+Route::delete('question/{question}/detach', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
 
 
 Route::resource('posts',PostController::class);

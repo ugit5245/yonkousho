@@ -31,7 +31,7 @@
 
 
         @if($knowledge_card->card_has_questions()->where('question_id', $question->id)->exists())
-        <a href="{{ route('QwithC.destroy', $question->id) }}">ひもづけ解除</a>
+        <a href="{{ route('QwithC.detach', $question->id) }}">ひもづけ解除</a>
         @else
         <a href="{{ route('QwithC.attach', $question) }}" onclick="event.preventDefault(); document.getElementById('QwithC.store-form').submit();">ひもづけ</a>
         @endif
