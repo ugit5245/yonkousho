@@ -20,6 +20,7 @@ class CardhasQuestionController extends Controller
     public function attach(Request $request, Question $question)
     {
         $kId = $request->input('knowledge_card_id');
+        
         $question->knowledge_cards()->syncWithoutDetaching($kId);
 
         return redirect()->route('question.show', $question);

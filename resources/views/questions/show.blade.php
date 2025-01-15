@@ -33,10 +33,10 @@
         @if($knowledge_card->card_has_questions()->where('question_id', $question->id)->exists())
         <a href="{{ route('QwithC.destroy', $question->id) }}">ひもづけ解除</a>
         @else
-        <a href="{{ route('QwithC.store', $question) }}" onclick="event.preventDefault(); document.getElementById('favorites-store-form').submit();">ひもづけ</a>
+        <a href="{{ route('QwithC.attach', $question) }}" onclick="event.preventDefault(); document.getElementById('QwithC.store-form').submit();">ひもづけ</a>
         @endif
 </form>
-<form id="favorites-store-form" action="{{ route('QwithC.store', $question->id) }}" method="POST">
+<form id="QwithC.store-form" action="{{ route('QwithC.attach', $question->id) }}" method="POST">
   @csrf
 </form>
 </td>
