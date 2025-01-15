@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Book;
+use App\Models\Question;
+use App\Models\KnowledgeCard;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,7 +18,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
- 
+
         return view('posts.index', compact('posts'));
     }
 
@@ -28,7 +31,7 @@ class PostController extends Controller
     {
         return view('posts.create');
     }
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,12 +42,12 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $post = new post();
-         $post->post_title = $request->input('post_title');
-         $post->book_id = $request->input('book_id');
-         $post->book_page = $request->input('book_page');
-         $post->save();
- 
-         return to_route('posts.index');
+        $post->post_title = $request->input('post_title');
+        $post->book_id = $request->input('book_id');
+        $post->book_page = $request->input('book_page');
+        $post->save();
+
+        return to_route('posts.index');
     }
 
     /**
@@ -53,9 +56,18 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        return view('posts.show', compact('post',));
+        //postsの単一レコードをidで取得
+        $post = Post::findOrFail($id);
+
+        //リレーション先のbooksの単一レコードを取得
+        $book = $post->book;
+
+        //book_idとbook_pageが共通するすべてのquestionsレコードを取得
+        $questions = Question::where('book_id', $post->book_id)->where('book_page', $post->book_page)->get();
+
+        return view('posts.show', compact('post', 'book', 'questions'));
     }
 
     /**
@@ -79,12 +91,12 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $post = new post();
-         $post->post_title = $request->input('post_title');
-         $post->book_id = $request->input('book_id');
-         $post->book_page = $request->input('book_page');
-         $post->save();
- 
-         return to_route('posts.index');
+        $post->post_title = $request->input('post_title');
+        $post->book_id = $request->input('book_id');
+        $post->book_page = $request->input('book_page');
+        $post->save();
+
+        return to_route('posts.index');
     }
 
     /**
