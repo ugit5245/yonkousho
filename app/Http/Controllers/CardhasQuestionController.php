@@ -27,11 +27,9 @@ class CardhasQuestionController extends Controller
 
 
 
-    public function detach(Request $request, Question $question)
+    public function detach($a, $b)
     {
-        $kId = $request->input('knowledge_card_id');
-        $question->question_has_cards()->detach($kId);
-
-        return redirect()->route('question.show', $question);
+        KnowledgeCard::find($b)->card_has_questions()->detach($a);
+        return back();
     }
 }

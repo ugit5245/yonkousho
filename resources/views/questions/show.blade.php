@@ -28,14 +28,20 @@
 
        
         @if($knowledge_card->card_has_questions()->where('question_id', $question->id)->exists())
-        <a href="{{ route('QwithC.detach', ['x' => $question->id, 'y' => $knowledge_card->id]) }}">ひもづけ解除</a>
+        <a href="{{ route('QwithC.detach', ['x' => $question->id, 'y' => $knowledge_card->id]) }}" onclick="event.preventDefault(); document.getElementById('QwithC.detach-form').submit();">ひもづけ解除</a>
         @else
         <a href="{{ route('QwithC.attach', ['x' => $question->id, 'y' => $knowledge_card->id]) }}" onclick="event.preventDefault(); document.getElementById('QwithC.store-form').submit();">ひもづけ</a>
         @endif
 </form>
+
+<form id="QwithC.detach-form" action="{{ route('QwithC.attach', ['x' => $question->id, 'y' => $knowledge_card->id]) }}" method="POST">
+  @csrf
+  @method('DELETE')
+</form>
 <form id="QwithC.store-form" action="{{ route('QwithC.attach', ['x' => $question->id, 'y' => $knowledge_card->id]) }}" method="POST">
   @csrf
 </form>
+
 </td>
 </tr>
 @endforeach
