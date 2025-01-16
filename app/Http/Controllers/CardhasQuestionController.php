@@ -18,13 +18,11 @@ class CardhasQuestionController extends Controller
     }
 
 
-
     public function attach($a, $b)
     {
         KnowledgeCard::find($b)->card_has_questions()->syncWithoutDetaching($a);
         return back();
     }
-
 
 
     public function detach($a, $b)

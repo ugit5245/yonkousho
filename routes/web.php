@@ -27,4 +27,3 @@ Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])-
 Route::resource('posts',PostController::class);
 
 Route::resource('questions', QuestionController::class);
-
