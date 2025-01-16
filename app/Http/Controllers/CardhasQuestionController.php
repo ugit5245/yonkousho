@@ -17,14 +17,15 @@ class CardhasQuestionController extends Controller
         return view('questions.show', compact('question', 'knowledge_cards'));
     }
 
-    public function attach(Request $request, Question $question)
+
+
+    public function attach($a, $b)
     {
-        $kId = $request->input('knowledge_card_id');
-
-        $question->knowledge_cards()->syncWithoutDetaching($kId);
-
-        return redirect()->route('question.show', $question);
+        KnowledgeCard::find($b)->card_has_questions()->syncWithoutDetaching($a);
+        return back();
     }
+
+
 
     public function detach(Request $request, Question $question)
     {

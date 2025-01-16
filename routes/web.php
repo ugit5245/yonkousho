@@ -19,9 +19,9 @@ use App\Http\Controllers\QuestionHasCardController;
 
 Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->name('question.show');
 
-Route::post('question/{question}/attach', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
+Route::post('question/{x}/{y}', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
 
-Route::delete('question/{question}/detach', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
+Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
 
 
 Route::resource('posts',PostController::class);
