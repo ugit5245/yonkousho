@@ -7,7 +7,18 @@
 <div>{{ $post->post_title }}</div>
 <div>書籍名</div>
 <div>{{ $book->book_name }}</div>
-@foreach ($questions as $question)
-<div>{{ $question->question_title }}</div>
+
+@foreach ($Xquestions as $Xquestion)
+<div>{{ $Xquestion->question_title }}</div>
+
+@if ($Xquestion->question_has_cards->isEmpty())
+<div>知識なし</div>
+@else
+
+@foreach ($Xquestion->question_has_cards as $knowledge_card )
+<div>{{ $knowledge_card->card_title }}</div>
+@endforeach
+
+@endif
 @endforeach
 @endsection
