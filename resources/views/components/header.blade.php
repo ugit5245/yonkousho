@@ -1,1 +1,3 @@
-<p>ヘッダー</p>
+<div id="header-area">
+ヘッダー
+</div>

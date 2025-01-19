@@ -1,10 +1,46 @@
-@charset "UTF-8";
+@charset "utf-8";
 
-body{
-  background-color:#ccc;
+@media screen and (
+  /*ipadの画面幅768pxより*/
+  max-width: 767px) {
+  #main-right {
+    display: none;
+  }
 }
 
-#sidebar{
-  width:300px;
+
+
+body {
+  background-color: #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#header-area {
   background-color: white;
+  height: 300px;
+  margin: 0;
+}
+
+#advertisement-area {
+  height: 280px;
+  margin: 10px auto;
+}
+
+#main-left {
+  background-color: white;
+  /*スマホ全幅表示のため*/
+  width: 100%;
+}
+
+#main-right {
+  width: 300px;
+  background-color: white;
+  margin-left: 20px;
 }

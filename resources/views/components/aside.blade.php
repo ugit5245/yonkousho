@@ -1,1 +1,1 @@
-<aside id="sidebar">サイドバー</aside>
+<div id="main-right">サイドバー</div>

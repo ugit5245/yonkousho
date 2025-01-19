@@ -13,10 +13,21 @@
         @component('components.header')
         @endcomponent
 
-        <main>
-            @yield('content')
-            @yield('aside')
-        </main>
+        <div id="advertisement-area">
+            広告領域
+        </div>
+
+        <div id="main-area">
+
+            <main>
+                <div id="main-left">
+                    @yield('content')
+                </div>
+                @component('components.aside')
+                @endcomponent
+            </main>
+        </div>
+
     </div>
 </body>
 
