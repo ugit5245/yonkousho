@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    <link href="{{ asset('css/yonkousho.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/yonkousho.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -15,6 +15,7 @@
 
         <main>
             @yield('content')
+            @yield('aside')
         </main>
     </div>
 </body>

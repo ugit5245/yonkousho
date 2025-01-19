@@ -1,0 +1,1 @@
+<aside id="sidebar">サイドバー</aside>
