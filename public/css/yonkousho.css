@@ -1,30 +1,36 @@
 @charset "utf-8";
 
-@media screen and (
-  /*ipadの画面幅768pxより*/
-  max-width: 767px) {
-  #main-right {
-    display: none;
-  }
+
+
+
+html {
+  font-size: 62.5%;
 }
-
-
 
 body {
-  background-color: #ccc;
+  background-color: lightgray;
   margin: 0;
   padding: 0;
+  /* 全体のデフォルトフォントサイズ */
+  font-size: 1.6em;
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
+h2 {
+  background-color: #333333;
+  color: white;
+  padding: 10px;
+  font-size: 1.9rem;
 }
+
+h3 {
+  background-color: lightgray;
+}
+
+
 
 #header-area {
   background-color: white;
-  height: 300px;
+  max-height: 300px;
   margin: 0;
 }
 
@@ -33,14 +39,41 @@ main {
   margin: 10px auto;
 }
 
+
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  /* 記事領域の左端からサイド領域の右端まで */
+  display: flex;
+  /* 高さをバラバラに */
+  align-items: flex-start;
+}
+
 #main-left {
   background-color: white;
-  /*スマホ全幅表示のため*/
+  /* スマホ全幅表示のため */
   width: 100%;
+  padding: 30px 40px;
 }
 
 #main-right {
   width: 300px;
   background-color: white;
   margin-left: 20px;
+}
+
+@media screen and (
+  /* ipadの画面幅768pxより */
+  max-width: 767px) {
+
+  #main-right {
+    display: none;
+  }
+
+  #main-left {
+    padding: 10px;
+  }
+
 }
