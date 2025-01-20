@@ -16,9 +16,14 @@
 <div></div>
 @else
 
+<div id="cards-area">
 @foreach ($Xquestion->question_has_cards as $knowledge_card )
+<div id="one-card">
 <div>{{ $knowledge_card->card_title }}</div>
+<div>{{ $knowledge_card->card_content }}</div>
+</div>
 @endforeach
+</div>
 
 @endif
 @endforeach

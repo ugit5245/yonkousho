@@ -64,6 +64,19 @@ main {
   margin-left: 20px;
 }
 
+#cards-area {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#one-card {
+  background-color: antiquewhite;
+  width:
+  margin:5px;
+}
+
+
+
 @media screen and (
   /* ipadの画面幅768pxより */
   max-width: 767px) {
