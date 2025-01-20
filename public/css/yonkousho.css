@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 
-
-
 html {
   font-size: 62.5%;
 }
@@ -44,35 +42,43 @@ h3 {
 main {
   max-width: 1200px;
   margin: 0 auto;
-
   /* 記事領域の左端からサイド領域の右端まで */
   display: flex;
   /* 高さをバラバラに */
   align-items: flex-start;
+  overflow-x: hidden;
 }
 
 #main-left {
   background-color: white;
   /* スマホ全幅表示のため */
-  width: 100%;
   padding: 30px 40px;
+  flex-grow: 1;
+  overflow-x: hidden;
 }
 
 #main-right {
   width: 300px;
   background-color: white;
   margin-left: 20px;
+  flex-shrink: 0;
 }
 
 #cards-area {
+  width: 100%;
+  background-color: burlywood;
   display: flex;
+  /* flexboxを改行させない */
   flex-wrap: nowrap;
+  /* スクロールバー */
+  overflow-x: auto;
 }
 
 #one-card {
   background-color: antiquewhite;
-  width:
-  margin:5px;
+  width: 400px;
+  margin: 5px;
+  flex-shrink: 0;
 }
 
 
