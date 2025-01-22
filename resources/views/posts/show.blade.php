@@ -5,7 +5,7 @@
 @section('content')
 <h1>{{ $post->post_title }} 攻略</h1>
 
-<div>entry-status
+<div><span class="temp">entry-status</span>
 <ul>
 <li style="display:inline">更新日</li>|<li style="display:inline">公開日</li>
 </ul>

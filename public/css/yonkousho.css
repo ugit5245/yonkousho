@@ -1,5 +1,11 @@
 @charset "utf-8";
 
+.temp::after{
+content: "仮置き";
+color: red;
+vertical-align: super;
+font-size: 0.9rem;
+}
 
 html {
   font-size: 62.5%;
