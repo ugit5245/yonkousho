@@ -24,6 +24,8 @@ Route::post('question/{x}/{y}', [CardhasQuestionController::class, 'attach'])->n
 Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
 
 
+
+
 Route::resource('posts',PostController::class);
 
 Route::resource('questions', QuestionController::class);

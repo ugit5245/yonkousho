@@ -12,6 +12,9 @@
 </div>
 
 <div>関連リンク</div>
+@foreach ($Xposts as $a)
+<div><a href="{{ route('posts.show',$a->id) }}">{{ $a->book_page }}</a></div>
+@endforeach
 
 <div>目次</div>
 @foreach ($Xquestions as $Xquestion)

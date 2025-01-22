@@ -67,7 +67,9 @@ class PostController extends Controller
         //book_idとbook_pageを共通して持ち、knowledge_cardとリレーションのあるquestionのレコードを取得
         $Xquestions = Question::where('book_id', $post->book_id)->where('book_page', $post->book_page)->with('question_has_cards')->get();
 
-        return view('posts.show', compact('post', 'book', 'Xquestions'));
+        $Xposts = Post::where('book_id', $post->book_id)->get();
+
+        return view('posts.show', compact('post', 'book', 'Xquestions', 'Xposts'));
     }
 
     /**
