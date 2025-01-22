@@ -2,5 +2,8 @@
 
 @section('title','posts')
 @section('content')
-<p>index記事一覧</p>
+<h1>記事一覧</h1>
+@foreach ($posts as $a)
+<div><a href="{{ route('posts.show',$a->id) }}">{{ $a->book_page }}</a></div>
+@endforeach
 @endsection
