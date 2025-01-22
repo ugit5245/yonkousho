@@ -1,14 +1,21 @@
+/* 文字コードを指定し文字化けを避ける */
+/* 主流のUTF-8 */
 @charset "utf-8";
 
-.temp::after{
-content: "仮置き";
-color: red;
-vertical-align: super;
-font-size: 0.9rem;
+/* 開発中の暫定入力の目印 */
+.temp::after {
+  content: "仮置き";
+  color: red;
+  vertical-align: super;
+  font-size: 0.9rem;
 }
 
+
 html {
-  font-size: 62.5%;
+  /* ルートフォントサイズ */
+  /* 本文を1.6remで12px表示する */
+  /* 一般的なデフォルトの16pxを基準に考えやすくするため、1.6remが基準となるようにしている */
+  font-size: 46.875%;
 }
 
 body {
@@ -17,6 +24,7 @@ body {
   padding: 0;
   /* 全体のデフォルトフォントサイズ */
   font-size: 1.6em;
+  font-family: sans-serif;
 }
 
 h1 {
