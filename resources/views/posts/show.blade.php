@@ -29,7 +29,7 @@
 @foreach ($Xquestions as $Xquestion)
 
 <H3><span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
-<div>{{ $Xquestion->question_content }}</div>
+<div>{!! nl2br(e($Xquestion->question_content)) !!}</div>
 
 @if ($Xquestion->question_has_cards->isEmpty())
 <div></div>
