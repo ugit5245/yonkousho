@@ -23,33 +23,36 @@ use Illuminate\Support\Facades\Route;
 
 // Breeze導入で追加
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+  return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+  Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+  Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 // Breeze導入ここまで
 
 
-Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->name('question.show');
 
-Route::post('question/{x}/{y}', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
+Route::middleware(['auth', 'AdminMiddleware'])->group(function () {
 
-Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
+  Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->name('question.show');
+
+  Route::post('question/{x}/{y}', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
+
+  Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
 
 
 
 
-Route::resource('posts',PostController::class);
+  Route::resource('posts', PostController::class);
 
-Route::resource('questions', QuestionController::class);
-
+  Route::resource('questions', QuestionController::class);
+});
