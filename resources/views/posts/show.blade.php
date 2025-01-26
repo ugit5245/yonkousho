@@ -5,9 +5,10 @@
 @section('content')
 <h1>{{ $post->post_title }} 攻略</h1>
 
-<div><span class="temp">entry-status</span>
-<ul>
-<li style="display:inline">更新日</li>|<li style="display:inline">公開日</li>
+<div>
+<ul id="entry-date">
+<li style="display:inline">更新日：{{$post->updated_at->format('Y年m月d日')}}</li>
+<li style="display:inline">公開日：{{$post->created_at->format('Y年m月d日')}}</li>
 </ul>
 </div>
 

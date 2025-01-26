@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background-color: lightgray;
+  background-color:#f0f0f0;
   margin: 0;
   padding: 0;
   /* 全体のデフォルトフォントサイズ */
@@ -39,7 +39,7 @@ h2 {
 }
 
 h3 {
-  background-color: lightgray;
+  background-color: #f0f0f0;
 }
 
 
@@ -70,12 +70,18 @@ main {
 
 #main-left {
   background-color: white;
+  box-shadow: inset;
   /* スマホ全幅表示のため */
   padding: 30px 40px;
   /* 余白を係数で分配 */
   flex-grow: 1;
   overflow-x: hidden;
 }
+
+#entry-date{
+  padding-inline-start:0;
+}
+
 
 #main-right {
   width: 300px;
