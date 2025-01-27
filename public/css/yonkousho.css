@@ -12,6 +12,7 @@
 
 
 html {
+  min-width: 200px;
   /* ルートフォントサイズ */
   /* 本文を1.6remで12px表示する */
   /* 一般的なデフォルトの16pxを基準に考えやすくするため、1.6remが基準となるようにしている */
@@ -19,7 +20,7 @@ html {
 }
 
 body {
-  background-color:#f0f0f0;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 0;
   /* 全体のデフォルトフォントサイズ */
@@ -27,20 +28,20 @@ body {
   font-family: sans-serif;
 }
 
-#site-title{
-  
+#site-title {
+
   text-align: center;
   aspect-ratio: 5 / 1;
 }
 
-#site-title > a{
+#site-title>a {
   color: dimgray;
-  font-size: 10vw;
+  font-size: clamp(1px, 10vw, 120px);
   font-style: bold;
-text-decoration-line: none;
+  text-decoration-line: none;
 }
 
-a{
+a {
   color: black;
 }
 
@@ -95,8 +96,8 @@ main {
   overflow-x: hidden;
 }
 
-#entry-date{
-  padding-inline-start:0;
+#entry-date {
+  padding-inline-start: 0;
 }
 
 
