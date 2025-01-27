@@ -10,7 +10,7 @@
 
 <body>
     <div>
-        @component('components.header')
+        @component('mycomponents.header')
         @endcomponent
 
         <div id="advertisement-area">
@@ -23,7 +23,7 @@
                 <div id="main-left">
                     @yield('content')
                 </div>
-                @component('components.aside')
+                @component('mycomponents.aside')
                 @endcomponent
             </main>
         </div>
