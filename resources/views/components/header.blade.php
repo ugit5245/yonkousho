@@ -1,8 +1,6 @@
 <div id="header-area">
-  ヘッダー
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ms-auto mr-5 mt-2">
       @guest
       <li class="nav-item mr-5">
@@ -31,4 +29,11 @@
       @endguest
     </ul>
   </div>
+
+
+  <div id="site-title">
+    <a href=#>Yonkousho</a>
+  </div>
+
+
 </div>
