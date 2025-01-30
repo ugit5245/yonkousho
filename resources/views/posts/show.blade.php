@@ -32,7 +32,7 @@
 
 <h2>書籍紹介</h2>
 <div>{{ $book->book_name }}</div>
-
+<div id="book-img"><img src="{{ asset($book->image) }}"></div>
 
 <h2>設問攻略</h2>
 @foreach ($Xquestions as $Xquestion)

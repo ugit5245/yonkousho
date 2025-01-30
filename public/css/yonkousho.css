@@ -198,6 +198,10 @@ main {
   text-decoration: none;
 }
 
+#book-img img{
+  height:200px;
+}
+
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 #main-right {
@@ -209,6 +213,17 @@ main {
   /* flexboxを縮小させない */
   flex-shrink: 0;
 }
+
+#main-right h2 {
+  margin: 0;
+  font-size: 1.6rem;
+} 
+
+#main-right h3 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+} 
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
