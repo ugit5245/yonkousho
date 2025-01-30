@@ -1,3 +1,5 @@
+/* ーーーーーーーーーーーーーーーーーーーー */
+
 /* 文字コードを指定し文字化けを避ける */
 /* 主流のUTF-8 */
 @charset "utf-8";
@@ -10,39 +12,33 @@
   font-size: 0.9rem;
 }
 
-
 html {
-  min-width: 200px;
   /* ルートフォントサイズ */
   /* 本文を1.6remで12px表示する */
   /* 一般的なデフォルトの16pxを基準に考えやすくするため、1.6remが基準となるようにしている */
   font-size: 46.875%;
+  padding: 0;
 }
 
-body {
-  background-color: #f0f0f0;
+/* リセットCSS */
+p,
+ul {
   margin: 0;
   padding: 0;
-  /* 全体のデフォルトフォントサイズ */
-  font-size: 1.6em;
-  font-family: sans-serif;
 }
 
-#site-title {
+/* ーーーーーーーーーーーーーーーーーーーー */
+/* 包括設定（独特なもの上部に記載） */
 
-  text-align: center;
-  aspect-ratio: 5 / 1;
-}
-
-#site-title>a {
-  color: dimgray;
-  font-size: clamp(1px, 10vw, 120px);
-  font-style: bold;
-  text-decoration-line: none;
+/* aタグ内スパンのテキストを縦位置中央に */
+a span {
+  display: flex;
+  align-items: center;
 }
 
 a {
-  color: black;
+  color: inherit;
+  height: inherit;
 }
 
 h1 {
@@ -51,7 +47,7 @@ h1 {
 
 h2 {
   background-color: #333333;
-  color: white;
+  color: white !important;
   padding: 10px;
   font-size: 1.9rem;
 }
@@ -60,7 +56,19 @@ h3 {
   background-color: #f0f0f0;
 }
 
+/* ーーーーーーーーーーーーーーーーーーーー */
 
+body {
+  min-width: 200px;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  /* 全体のデフォルトフォントサイズ */
+  font-size: 1.6em;
+  font-family: sans-serif;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 #header-area {
   background-color: white;
@@ -68,12 +76,81 @@ h3 {
   margin: 0;
 }
 
-#advertisement-area {
-  height: 280px;
-  margin: 10px auto;
+#common-bar {
+  height: 30px;
+  background-color: black;
+  margin: 0;
+  padding: auto;
+  color: white;
+}
+
+#site-title {
+  font-size: clamp(1px, 7vw, 84.07px);
+  color: dimgray;
+  margin: 0 auto;
+  background-color: beige;
+  aspect-ratio: 1200 / 140;
+  max-height: 140px;
+  /* デフォルトによりflexコンテナの子要素は高さいっぱいに広がる */
+  display: flex;
+}
+
+#site-title a {
+  text-decoration: none;
+  /* デフォルトによりflexコンテナの子要素は高さいっぱいに広がる */
+  display: flex;
+  flex: 1 1;
+  justify-content: center
 }
 
 
+/* ーーーーーーーーーーーーーーーーーーーー */
+
+#global-nav {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  /*左右中央揃え*/
+  align-items: center;
+  /*上下中央揃え*/
+}
+
+nav {
+  width: 100%;
+  max-width: 1200px;
+}
+
+nav ul {
+  margin: auto;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  height: 30px;
+  flex: 1 1;
+}
+
+nav a {
+  /* flexコンテナの子要素は高さいっぱいに広がる */
+  display: flex;
+  flex: 1 1;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+
+/* ーーーーーーーーーーーーーーーーーーーー */
+
+#advertisement-area {
+  /* 広告実装後に変更 */
+  /* height: 280px; */
+  height: 10px;
+  margin: 10px auto;
+}
+
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 main {
   max-width: 1200px;
@@ -100,6 +177,7 @@ main {
   padding-inline-start: 0;
 }
 
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 #main-right {
   width: 300px;
@@ -110,6 +188,8 @@ main {
   /* flexboxを縮小させない */
   flex-shrink: 0;
 }
+
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 #cards-area {
   background-color: aliceblue;
@@ -135,7 +215,7 @@ main {
   flex-shrink: 0;
 }
 
-
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 @media screen and (
   /* ipadの画面幅768pxより */
@@ -155,6 +235,10 @@ main {
 
   body {
     font-size: 1.6rem;
+  }
+
+  #global-nav {
+    display: none;
   }
 
   #main-right {
