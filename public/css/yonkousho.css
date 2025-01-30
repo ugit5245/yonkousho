@@ -88,7 +88,6 @@ body {
   font-size: clamp(1px, 7vw, 84.07px);
   color: dimgray;
   margin: 0 auto;
-  background-color: beige;
   aspect-ratio: 1200 / 140;
   max-height: 140px;
   /* デフォルトによりflexコンテナの子要素は高さいっぱいに広がる */
@@ -102,7 +101,6 @@ body {
   flex: 1 1;
   justify-content: center
 }
-
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
@@ -198,8 +196,8 @@ main {
   text-decoration: none;
 }
 
-#book-img img{
-  height:200px;
+#book-img img {
+  height: 200px;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
@@ -217,21 +215,18 @@ main {
 #main-right h2 {
   margin: 0;
   font-size: 1.6rem;
-} 
+}
 
 #main-right h3 {
   margin: 0;
   font-size: 1.6rem;
   font-weight: bold;
-} 
+}
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 #cards-area {
-  background-color: aliceblue;
-
   width: 100%;
-
   display: flex;
   /* flexboxを改行させない */
   flex-wrap: nowrap;
