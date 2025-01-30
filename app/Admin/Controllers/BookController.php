@@ -27,6 +27,7 @@ class BookController extends AdminController
         $grid = new Grid(new Book());
 
         $grid->column('id', __('Id'));
+        $grid->column('image', __('Image'))->image();
         $grid->column('book_name', __('Book name'));
         $grid->column('exam_name', __('Exam name'));
         $grid->column('book_version', __('Book version'));
@@ -52,6 +53,7 @@ class BookController extends AdminController
         $show = new Show(Book::findOrFail($id));
 
         $show->field('id', __('Id'));
+        $show->field('image', __('Image'))->image();
         $show->field('book_name', __('Book name'));
         $show->field('exam_name', __('Exam name'));
         $show->field('book_version', __('Book version'));
@@ -75,6 +77,7 @@ class BookController extends AdminController
         $form->text('exam_name', __('Exam name'));
         $form->number('book_version', __('Book version'));
         $form->text('book_publisher', __('Book publisher'));
+        $form->image('image', __('Image'));
 
         return $form;
     }
