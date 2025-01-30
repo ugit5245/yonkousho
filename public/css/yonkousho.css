@@ -139,8 +139,6 @@ nav a {
   text-decoration: none;
 }
 
-
-
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 #advertisement-area {
@@ -159,8 +157,6 @@ main {
   display: flex;
   /* 高さをバラバラに */
   align-items: flex-start;
-
-
 }
 
 #main-left {
@@ -173,8 +169,33 @@ main {
   overflow-x: hidden;
 }
 
+
 #entry-date {
   padding-inline-start: 0;
+}
+
+
+#relative-link {
+  display: flex;
+}
+
+
+#table-of-contents {
+  border: solid 1px #aaa;
+  width: 350px;
+}
+
+#table-of-contents div {
+  text-align: center;
+}
+
+#table-of-contents ul {
+  list-style: none;
+  padding: 8px;
+}
+
+#table-of-contents a {
+  text-decoration: none;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
