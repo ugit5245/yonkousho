@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 // Breeze導入で追加
 Route::get('/', function () {
   return view('welcome');
@@ -41,6 +42,7 @@ require __DIR__ . '/auth.php';
 
 
 
+// 管理者用ルートグループ
 Route::middleware(['auth', 'AdminMiddleware'])->group(function () {
 
   Route::get('question/{question}', [CardhasQuestionController::class, 'show'])->name('question.show');
@@ -48,9 +50,11 @@ Route::middleware(['auth', 'AdminMiddleware'])->group(function () {
   Route::post('question/{x}/{y}', [CardhasQuestionController::class, 'attach'])->name('QwithC.attach');
 
   Route::delete('question/{x}/{y}', [CardhasQuestionController::class, 'detach'])->name('QwithC.detach');
+});
 
 
-
+// ゲスト用ルートグループ（ルート細分化予定、テスト用にauthルート化中、guestルート化予定）
+Route::middleware(['auth'])->group(function () {
 
   Route::resource('posts', PostController::class);
 

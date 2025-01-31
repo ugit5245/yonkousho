@@ -84,6 +84,10 @@ body {
   color: white;
 }
 
+.nav-item {
+  text-align: right !important;
+}
+
 #site-title {
   font-size: clamp(1px, 7vw, 84.07px);
   color: dimgray;

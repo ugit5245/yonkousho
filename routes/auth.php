@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('guest')->group(function () {
     
     // テスト公開のために登録機能隠す
-    // Route::get('register', [RegisteredUserController::class, 'create'])
-    //             ->name('register');
+    //  Route::get('register', [RegisteredUserController::class, 'create'])
+    //              ->name('register');
 
-    // Route::post('register', [RegisteredUserController::class, 'store']);
+    //  Route::post('register', [RegisteredUserController::class, 'store']);
+    // テスト公開のために登録機能隠す
 
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');

@@ -19,10 +19,10 @@
         </li>
         @else
         <li class="nav-item mr-5">
+          <span>{{ Auth::user()->name }}</span>
           <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             ログアウト
           </a>
-
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
           </form>
@@ -43,7 +43,7 @@
         <li><a href="{{ route('posts.index') }}"><span>記事一覧</span></a></li>
         <li><a><span>このサイトについて</span></a></li>
         <li><a><span>サイトの使い方</span></a></li>
-        
+
     </nav>
   </div>
 
