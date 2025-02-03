@@ -1,3 +1,6 @@
+/* bootstrap */
+
+
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 /* 文字コードを指定し文字化けを避ける */
@@ -37,7 +40,7 @@ a span {
 }
 
 a {
-  color: inherit;
+  color: inherit !important;
   height: inherit;
 }
 
