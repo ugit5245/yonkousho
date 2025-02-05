@@ -17,9 +17,9 @@
 
 html {
   /* ルートフォントサイズ */
-  /* 本文を1.6remで12px表示する */
+  /* 本文を1.6remで12px表示する46.875%; */
   /* 一般的なデフォルトの16pxを基準に考えやすくするため、1.6remが基準となるようにしている */
-  font-size: 46.875%;
+  font-size: 62.5%;
   padding: 0;
 }
 
@@ -45,29 +45,46 @@ a {
 }
 
 h1 {
-  font-size: 2.4rem;
+  margin: 0 0 30px 0 !important;
+  font-size: 2.4rem !important;
+  font-weight: bold !important;
 }
 
 h2 {
+  margin: 40px 0px 20px !important;
   background-color: #333333;
   color: white !important;
-  padding: 10px;
-  font-size: 1.9rem;
+  padding: 10px !important;
+  font-size: 1.9rem !important;
 }
 
 h3 {
+  margin: 40px 0px 20px !important;
   background-color: #f0f0f0;
+  padding: 10px 0 !important;
+  font-size: 1.9rem !important;
+  border-bottom-color: #333333;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+h4 {
+  font-weight: bold !important;
+}
+
+.area {
+  margin: 10px 0;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 body {
   min-width: 200px;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
   margin: 0;
   padding: 0;
   /* 全体のデフォルトフォントサイズ */
-  font-size: 1.6em;
+  font-size: 1.6em !important;
   font-family: sans-serif;
 }
 
@@ -147,8 +164,7 @@ nav a {
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 #advertisement-area {
-  /* 広告実装後に変更 */
-  /* height: 280px; */
+  /* 広告実装後に変更 height: 280px; */
   height: 10px;
   margin: 10px auto;
 }
@@ -160,7 +176,7 @@ main {
   margin: 0 auto;
   /* 記事領域の左端からサイド領域の右端まで */
   display: flex;
-  /* 高さをバラバラに */
+  /* タテ長さをバラバラに */
   align-items: flex-start;
 }
 
@@ -174,16 +190,13 @@ main {
   overflow-x: hidden;
 }
 
+/* ーーーーーーーーーーーーーーーーーーーー */
 
-#entry-date {
-  padding-inline-start: 0;
+#entry-date span {
+  display: inline-block;
 }
 
-
-#relative-link {
-  display: flex;
-}
-
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 #table-of-contents {
   border: solid 1px #aaa;
@@ -202,6 +215,8 @@ main {
 #table-of-contents a {
   text-decoration: none;
 }
+
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 #book-img img {
   height: 200px;
@@ -251,6 +266,7 @@ main {
   margin-right: 10px;
   /* flexboxを縮小させない */
   flex-shrink: 0;
+  padding: 10px;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
@@ -260,19 +276,19 @@ main {
   max-width: 767px) {
 
   h1 {
-    font-size: 2.0rem;
+    font-size: 2.0rem !important;
   }
 
   h2 {
-    font-size: 1.9rem;
+    font-size: 1.9rem !important;
   }
 
   h3 {
-    font-size: 1.8rem;
+    font-size: 1.8rem !important;
   }
 
   body {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
   }
 
   #global-nav {
