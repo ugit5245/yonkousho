@@ -44,18 +44,23 @@
 
 <section>
   <H3><span id="{{$Xquestion->question_number}}">{{ $Xquestion->question_number }}</span>：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
-  <div>{!! nl2br(e($Xquestion->question_content)) !!}</div>
+  <div id="question-content">{!! ($Xquestion->question_content) !!}</div>
+
 
   @if ($Xquestion->question_has_cards->isEmpty())
   <div></div>
-  @else
 
+  @else
   <div id="cards-area">
     @foreach ($Xquestion->question_has_cards as $knowledge_card )
     <section id="one-card">
-      <h4>{{ $knowledge_card->card_title }}</h4>
-      <div>{{ $knowledge_card->card_content }}</div>
-      <div>{{ $knowledge_card->source_category_code }}</div>
+      <div id="card-title-bar">
+        <h4>{{ $knowledge_card->card_title }}</h4>
+      </div>
+      <div id="card-content">
+        <div>{{ $knowledge_card->card_content }}</div>
+        <div>{{ $knowledge_card->source_category_code }}</div>
+      </div>
     </section>
     @endforeach
   </div>
