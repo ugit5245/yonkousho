@@ -36,10 +36,11 @@ class PostController extends Controller
         //リレーション先のbooksの単一レコードを取得
         $book = $post->book;
 
-        //book_idとbook_pageを共通して持ち、knowledge_cardとリレーションのあるquestionのレコードを取得
-        $Xquestions = Question::where('book_id', $post->book_id)->where('book_page', $post->book_page)->with('question_has_cards')->get();
+        //記事のbook_idとbook_pageを共通して持ち、knowledge_cardとリレーションのあるquestionのレコードを、ナンバー順に並べて取得
+        $Xquestions = Question::where('book_id', $post->book_id)->where('book_page', $post->book_page)->with('question_has_cards')->orderBy('question_number','asc')->get();
 
-        $Xposts = Post::where('book_id', $post->book_id)->get();
+        // 記事のbook_idを共通して持つpostのレコードを、book_page順に並べて取得
+        $Xposts = Post::where('book_id', $post->book_id)->orderBy('book_page','asc')->get();
 
         return view('posts.show', compact('post', 'book', 'Xquestions', 'Xposts'));
     }
