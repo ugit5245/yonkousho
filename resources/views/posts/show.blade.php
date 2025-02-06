@@ -44,7 +44,16 @@
 @foreach ($Xquestions as $Xquestion)
 
 <section>
-  <H3><span id="{{$Xquestion->question_number}}">{{ $Xquestion->question_number }}</span>：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
+  <H3><span id="{{$Xquestion->question_number}}">{{ $Xquestion->question_number }}</span>
+
+
+    @if ($book->question_title_visible === 1)
+    
+    ：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
+  @else
+  </h3>
+  @endif
+
 
   <!-- str_replaceでspanに置換しinline-blockにして折り返し -->
   <div id="question-content">
