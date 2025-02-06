@@ -44,7 +44,7 @@
 
 <section>
   <H3><span id="{{$Xquestion->question_number}}">{{ $Xquestion->question_number }}</span>：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
-  <div id="question-content">{!! ($Xquestion->question_content) !!}</div>
+  <div id="question-content">{!! (str_replace('%%', '</span><span>', ($Xquestion->question_content))) !!}</div>
 
 
   @if ($Xquestion->question_has_cards->isEmpty())

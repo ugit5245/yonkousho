@@ -281,7 +281,7 @@ main {
   background-color: antiquewhite;
   /* ブレイクポイント時に次のカードが見えるように */
   width: 350px;
-  max-width: 70%;
+  max-width: 80%;
   height: 200px;
   margin-right: 10px;
   /* flexboxを縮小させない */
@@ -312,7 +312,7 @@ main {
   }
 
   body {
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
   }
 
   #global-nav {
