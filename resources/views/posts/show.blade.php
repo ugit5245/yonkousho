@@ -3,7 +3,8 @@
 @section('title','posts')
 
 @section('content')
-<h1>{{ $post->post_title }} 攻略</h1>
+
+<h1>{!! (str_replace('%%', '</span><span>', ($post->post_title))) !!} 攻略</h1>
 
 
 <div id="entry-date">
@@ -26,7 +27,7 @@
   <div>目次</div>
   <ul>
     @foreach ($Xquestions as $Xquestion)
-    <li><a href="#{{ $Xquestion->question_number }}">{{ $Xquestion->question_title }}</a></li>
+    <li><a href="#{{ $Xquestion->question_number }}">{{ $Xquestion->question_number }}</a></li>
     @endforeach
   </ul>
 </div>
@@ -44,7 +45,11 @@
 
 <section>
   <H3><span id="{{$Xquestion->question_number}}">{{ $Xquestion->question_number }}</span>：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
-  <div id="question-content">{!! (str_replace('%%', '</span><span>', ($Xquestion->question_content))) !!}</div>
+
+  <!-- str_replaceでspanに置換しinline-blockにして折り返し -->
+  <div id="question-content">
+    {!! (str_replace('%%', '</span><span>', ($Xquestion->question_content))) !!}
+  </div>
 
 
   @if ($Xquestion->question_has_cards->isEmpty())
@@ -58,7 +63,7 @@
         <h4>{{ $knowledge_card->card_title }}</h4>
       </div>
       <div id="card-content">
-        <div>{{ $knowledge_card->card_content }}</div>
+        <span>{{ $knowledge_card->card_content }}</span>
         <div>{{ $knowledge_card->source_category_code }}</div>
       </div>
     </section>

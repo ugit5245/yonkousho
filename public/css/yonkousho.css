@@ -21,6 +21,8 @@ html {
   /* 一般的なデフォルトの16pxを基準に考えやすくするため、1.6remが基準となるようにしている */
   font-size: 62.5%;
   padding: 0;
+  margin: 0;
+
 }
 
 /* リセットCSS */
@@ -32,6 +34,10 @@ ul {
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 /* 包括設定（独特なもの上部に記載） */
+
+span {
+  display: inline-block;
+}
 
 /* aタグ内スパンのテキストを縦位置中央に */
 a span {
@@ -59,7 +65,7 @@ h2 {
 }
 
 h3 {
-  margin: 40px 0px 20px !important;
+  margin: 40px 0px 10px !important;
   background-color: #f0f0f0;
   padding: 10px 0 !important;
   font-size: 1.9rem !important;
@@ -75,6 +81,7 @@ h4 {
 
 .area {
   margin: 10px 0;
+  max-width: 100%;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
@@ -87,6 +94,7 @@ body {
   /* 全体のデフォルトフォントサイズ */
   font-size: 1.6em !important;
   font-family: sans-serif;
+  overscroll-behavior: none !important;
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
@@ -101,8 +109,29 @@ body {
   height: 30px;
   background-color: black;
   margin: 0;
-  padding: auto;
+  padding: 0 10px;
   color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#common-bar-user ul {
+  margin: auto;
+  list-style: none;
+  display: flex;
+
+}
+
+/* 
+#common-bar-user li{
+  height: 30px;
+  
+} */
+
+#common-bar-user a {
+  height: 30px;
+  display: flex;
+  padding: 0 5px;
 }
 
 .nav-item {
@@ -160,6 +189,7 @@ nav a {
   flex: 1 1;
   justify-content: center;
   text-decoration: none;
+  font-size: clamp(1px, 2.5vw, 14px);
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
@@ -193,9 +223,7 @@ main {
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
-#entry-date span {
-  display: inline-block;
-}
+
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
@@ -249,6 +277,7 @@ main {
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 #question-content {
+  margin: 10px 0;
   overflow-wrap: break-word;
 }
 
@@ -266,10 +295,12 @@ main {
   /* スクロールバー */
   overflow-x: auto;
   padding-bottom: 12px;
+
 }
 
 #card-title-bar {
   background-color: burlywood;
+  border-radius: 10px 10px 0 0;
 }
 
 #card-title-bar h4 {
@@ -281,11 +312,12 @@ main {
   background-color: antiquewhite;
   /* ブレイクポイント時に次のカードが見えるように */
   width: 350px;
-  max-width: 80%;
+  max-width: 85%;
   height: 200px;
   margin-right: 10px;
   /* flexboxを縮小させない */
   flex-shrink: 0;
+  border-radius: 10px;
 }
 
 #card-content {
@@ -315,9 +347,9 @@ main {
     font-size: 1.4rem !important;
   }
 
-  #global-nav {
+  /* #global-nav {
     display: none;
-  }
+  } */
 
   #main-right {
     display: none;
