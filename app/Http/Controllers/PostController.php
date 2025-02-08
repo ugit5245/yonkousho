@@ -17,9 +17,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::all()->sortBy('book_page');
 
-        return view('posts.index', compact('posts'));
+        $books = Book::all()->sortBy('book_name');
+
+        return view('posts.index', compact('posts', 'books'));
     }
 
     /**
