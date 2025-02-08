@@ -39,7 +39,7 @@
   </div>
 
   <div id="site-title">
-    <a href=#><span>Yonkousho</span></a>
+    <a href="{{ route('posts.index') }}"><span>Yonkousho</span></a>
   </div>
 
   <div id="global-nav">
