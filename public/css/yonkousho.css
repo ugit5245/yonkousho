@@ -85,7 +85,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.6rem !important;
+  font-size: 1.2rem !important;
   font-weight: bold !important;
 }
 
@@ -339,14 +339,14 @@ main {
 
 #cards {
   display: inline-flex;
-  padding-right: 30vw;
+  padding-right:calc( 15vw - 20px);
 }
 
 #one-card {
   position: relative;
   background-color: antiquewhite;
   /* ブレイクポイント時に次のカードが見えるように */
-  width: 300px;
+  width: 250px;
   max-width: 85vw;
   height: 200px;
   margin-right: 10px;
@@ -357,17 +357,21 @@ main {
   border-style: solid;
   border-color: var(--card-heavy-color);
   pointer-events: none;
+  font-size: 1.2rem;
 
 }
 
 #card-title-bar {
   background-color: var(--card-heavy-color);
   /* border-radius: 10px 10px 0 0; */
+  /* borderとの隙間を埋める */
+  margin-inline: -2px;
 }
 
 #card-title-bar h4 {
   display: flex;
   padding: 4px;
+
 }
 
 #card-content {

@@ -75,7 +75,9 @@
             <h4>{{ $knowledge_card->card_title }}</h4>
           </div>
           <div id="card-content">
-            <span>{{ $knowledge_card->card_content }}</span>
+            <!-- <span>{{ $knowledge_card->card_content }}</span> -->
+            <div> {!! (str_replace('%%', '</span><span>', ($knowledge_card->card_content))) !!}</div>
+
             <div>{{ $knowledge_card->source_category_code }}</div>
           </div>
         </section>
