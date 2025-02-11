@@ -320,8 +320,9 @@ main {
   top: 0;
   width: 20vw;
   height: 270px;
+  /* iphone表示崩れのためベンダープレフィックス */
+  -webkit-backdrop-filter: blur(7px);
   backdrop-filter: blur(7px);
-  overflow: hidden;
   mask: linear-gradient(to left, white, 18vw, transparent);
 }
 
