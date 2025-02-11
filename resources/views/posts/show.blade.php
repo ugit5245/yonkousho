@@ -48,7 +48,7 @@
 
 
     @if ($book->question_title_visible === 1)
-    
+
     ：<span id="{{$Xquestion->question_title}}">{{ $Xquestion->question_title }}</span></H3>
   @else
   </h3>
@@ -65,18 +65,26 @@
   <div></div>
 
   @else
-  <div id="cards-area">
-    @foreach ($Xquestion->question_has_cards as $knowledge_card )
-    <section id="one-card">
-      <div id="card-title-bar">
-        <h4>{{ $knowledge_card->card_title }}</h4>
+  <div id="cards-area-container" class="position-container">
+
+    <div id="cards-area" class="position-content">
+      <div id="cards">
+        @foreach ($Xquestion->question_has_cards as $knowledge_card )
+        <section id="one-card">
+          <div id="card-title-bar">
+            <h4>{{ $knowledge_card->card_title }}</h4>
+          </div>
+          <div id="card-content">
+            <span>{{ $knowledge_card->card_content }}</span>
+            <div>{{ $knowledge_card->source_category_code }}</div>
+          </div>
+        </section>
+        @endforeach
       </div>
-      <div id="card-content">
-        <span>{{ $knowledge_card->card_content }}</span>
-        <div>{{ $knowledge_card->source_category_code }}</div>
-      </div>
-    </section>
-    @endforeach
+    </div>
+
+    <div id="blur" class="position-content"></div>
+
   </div>
 
   @endif

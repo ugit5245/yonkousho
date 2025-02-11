@@ -1,6 +1,7 @@
 /* bootstrap */
 
 
+
 /* ーーーーーーーーーーーーーーーーーーーー */
 
 /* 文字コードを指定し文字化けを避ける */
@@ -14,6 +15,15 @@
   vertical-align: super;
   font-size: 0.9rem;
 }
+
+/* ーーーーーーーーーーーーーーーーーーーー */
+
+/* カスタムプロパティ */
+:root {
+  --card-heavy-color:burlywood;
+  }
+
+/* ーーーーーーーーーーーーーーーーーーーー */
 
 html {
   /* ルートフォントサイズ */
@@ -287,21 +297,72 @@ main {
 
 /* ーーーーーーーーーーーーーーーーーーーー */
 
-#cards-area {
+
+.position-container {
+  position: relative;
+}
+
+.position-content {
+  position: absolute;
+}
+
+#cards-area-container {
+  height: 230px;
   width: 100%;
-  display: flex;
+}
+
+#blur {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  /* マイナスマージンではみ出させる */
+  margin: -30px 0 -30px 80vw;
+  top: 0;
+  width: 20vw;
+  height: 270px;
+  backdrop-filter: blur(7px);
+  overflow: hidden;
+  mask: linear-gradient(to left, white, 18vw, transparent);
+}
+
+#cards-area {
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
   /* flexboxを改行させない */
   flex-wrap: nowrap;
   /* スクロールバー */
   overflow-x: auto;
-  padding-bottom: 12px;
+  padding-bottom: 10px;
+}
 
+#cards {
+  display: inline-flex;
+  padding-right: 30vw;
+}
+
+#one-card {
+  position: relative;
+  background-color: antiquewhite;
+  /* ブレイクポイント時に次のカードが見えるように */
+  width: 300px;
+  max-width: 85vw;
+  height: 200px;
+  margin-right: 10px;
+  /* flexboxを縮小させない */
+  flex-shrink: 0;
+  border-radius: 10px;
+  border-width: 4px;
+  border-style: solid;
+  border-color: var(--card-heavy-color);
+  pointer-events: none;
 
 }
 
 #card-title-bar {
-  background-color: burlywood;
-  border-radius: 10px 10px 0 0;
+  background-color: var(--card-heavy-color);
+  /* border-radius: 10px 10px 0 0; */
 }
 
 #card-title-bar h4 {
@@ -309,23 +370,8 @@ main {
   padding: 4px;
 }
 
-#one-card {
-  background-color: antiquewhite;
-  /* ブレイクポイント時に次のカードが見えるように */
-  width: 350px;
-  max-width: 85%;
-  height: 200px;
-  margin-right: 10px;
-  /* flexboxを縮小させない */
-  flex-shrink: 0;
-  border-radius: 10px;
-
-
-}
-
 #card-content {
   padding: 0 4px;
-  /* overflow-wrap: break-word; */
 }
 
 /* ーーーーーーーーーーーーーーーーーーーー */
